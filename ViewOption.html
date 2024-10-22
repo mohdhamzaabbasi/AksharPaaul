@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Attendance Options - Akshar Paaul</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+
+        .dashboard-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .header h2 {
+            color: #4e54c8;
+        }
+
+        .logout-btn {
+            padding: 10px 15px;
+            background-color: #e63946;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: #d62839;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allows wrapping of cards on smaller screens */
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: #e6e7ff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: calc(50% - 10px); /* Adjusts width to leave space for margins */
+            margin-bottom: 20px; /* Adds margin below cards */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin: 15px 0;
+            color: #4e54c8;
+        }
+
+        .view-btn {
+            padding: 10px 15px;
+            background-color: #4e54c8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .view-btn:hover {
+            background-color: #8f94fb;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                width: 100%; /* Stacks cards vertically on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Header -->
+        <div class="header">
+            <h2>View Attendance Options</h2>
+            <button class="logout-btn" onclick="window.location.href='index.html'">Logout</button>
+        </div>
+
+        <!-- Options Section -->
+        <div class="options">
+            <div class="card" onclick="window.location.href='ViewClass.html'">
+                <img src="class.jpg" alt="View by Class">
+                <h3>View by Class</h3>
+                <button class="view-btn">View Attendance</button>
+            </div>
+            <div class="card" onclick="window.location.href='ViewClassStu.html'">
+                <img src="student.jpeg" alt="View by Student">
+                <h3>View by Student</h3>
+                <button class="view-btn">View Attendance</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

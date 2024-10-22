@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - Akshar Paaul</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+        
+        h2{
+            text-align: center;
+        }
+
+        .dashboard-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .header h2 {
+            color: #4e54c8;
+        }
+
+        .logout-btn {
+            padding: 10px 15px;
+            background-color: #e63946;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: #d62839;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #e6e7ff;
+        }
+
+        .profile-section img {
+            border-radius: 50%;
+            width: 100px; /* Adjust size as needed */
+            height: 100px; /* Adjust size as needed */
+            margin-bottom: 10px;
+        }
+
+        .profile-section h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .profile-section p {
+            color: #777;
+            margin: 5px 0;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .action-btn {
+            padding: 15px 20px;
+            background-color: #4e54c8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-align: center;
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .action-btn:hover {
+            background-color: #8f94fb;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .action-btn {
+                margin: 10px 0;
+                width: 100%;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logout-btn {
+                margin-top: 10px;
+                width: 100%; /* Full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Header -->
+        <div class="header">
+            <h2>Welcome to Your Dashboard</h2>
+            <button class="logout-btn" onclick="window.location.href='index.html'">Logout</button>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <img src="logo.jpeg" alt="Teacher Profile Picture"> <!-- Replace with actual image path -->
+            <h3>Mohd Hamza Abbasi</h3>
+            <p><strong>School:</strong> Akshar Paaul Warje</p>
+            <p><strong>Subject:</strong> Mathematics</p>
+            <p><strong>Employee ID:</strong> EMP123456</p>
+            <p><strong>Email:</strong> hamzamohd.abbasi@gmail.com</p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="action-btn" onclick="window.location.href='takeattendance.html'">Take Attendance</button>
+            <button class="action-btn" onclick="window.location.href='Modify.html'">Modify Attendance</button>
+            <button class="action-btn" onclick="window.location.href='ViewOption.html'">View Past Attendance</button>
+        </div>
+    </div>
+
+</body>
+</html>
