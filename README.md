@@ -46,3 +46,5 @@ Usage
 Take Attendance: Mark students as present or absent.
 Modify Attendance: Update attendance records for a specific date or class.
 View Past Attendance: Browse attendance records by class or student.
+
+View demo of the project--> https://drive.google.com/file/d/1lbfoYq-Pqau5jM5MjyomvBECnBBTh7L_/view?usp=sharing
