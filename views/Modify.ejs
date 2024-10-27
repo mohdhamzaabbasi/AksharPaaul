@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Attendance - Akshar Paaul</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+
+        .dashboard-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .header h2 {
+            color: #4e54c8;
+        }
+
+        .logout-btn {
+            padding: 10px 15px;
+            background-color: #e63946;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: #d62839;
+        }
+
+        .class-list {
+            margin-bottom: 30px;
+        }
+
+        .class-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #e6e7ff;
+            border-radius: 8px;
+        }
+
+        .status {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .date-time {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .attendance-btn {
+            padding: 10px 15px;
+            background-color: #4e54c8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .view-attendance-btn {
+            padding: 10px 15px;
+            background-color: #4e54c8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .invisible {
+            display: none;
+            visibility: hidden;
+            height: 0%;
+        }
+        .view-attendance-btn:hover {
+            background-color: #8f94fb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Header -->
+        <div class="header">
+            <h2>Modify Attendance</h2>
+            <form action="/" method="get"><button class="logout-btn">Logout</button></form>
+        </div>
+
+        <!-- Class List Section -->
+        <div class="class-list">
+            <h3>Your Classes:</h3>
+            </div>
+            <%for(classes of resp){%>
+                <div class="class-item">
+                    <h4><%= classes.class %> <%= classes.class_div %></h4>
+                    <span class="date-time"> &nbsp;&nbsp;&nbsp; <%= classes.attendance_date.substring(4,15) %> &nbsp;&nbsp;&nbsp;<%= classes.attendance_date.substring(16,25) %></span>
+                    <form action="/finalmod" method="post">
+                        <input type="text" value="<%= classes.session_id %>" class="invisible" name="session_id">
+                        <button class="attendance-btn">View Attendance</button>
+                    </form>
+                </div>
+            <%}%>
+            </div>
+            <!-- Add more classes as needed -->
+        </div>
+    </div>
+
+</body>
+</html>

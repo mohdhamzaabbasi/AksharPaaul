@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List - Akshar Paaul</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+
+        .student-list-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+        h2{
+            text-align: center;
+        }
+        .header h2 {
+            color: #4e54c8;
+        }
+
+        .student-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            transition: background 0.3s;
+        }
+
+        .student-item:hover {
+            background-color: #e6e7ff;
+        }
+
+        .student-name {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .view-btn {
+            padding: 10px 15px;
+            background-color: #4e54c8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .view-btn:hover {
+            background-color: #8f94fb;
+        }
+
+        .logout-btn {
+            padding: 10px 15px;
+            background-color: #e63946;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .logout-btn:hover {
+            background-color: #d62839;
+        }
+        .invisible {
+                display: none;
+                visibility: hidden;
+                height: 0%;
+            }
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            .student-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .view-btn {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="student-list-container">
+        <!-- Header -->
+        <div class="header">
+            <h2>Student List</h2>
+            <form action="/" method="get"><button class="logout-btn" onclick="window.location.href='index.html'">Logout</button></form>
+        </div>
+
+        <!-- Student Items -->
+        <%for(stud of resp){%>
+            <div class="student-item">
+                <span><%= stud.roll_no %></span>
+                <span><%= stud.name %></span>
+                <form action="stuProfile" method="post">
+                    <input type="text" name="name" class="invisible" value="<%= stud.name %>">
+                    <input type="text" name="roll_no" class="invisible" value="<%= stud.roll_no %>">
+                    <button class="view-btn">View Attendance</button>
+                </form>
+            </div>
+        <%}%>
+        <!-- Add more students as needed -->
+    </div>
+
+</body>
+</html>
